@@ -1,0 +1,18 @@
+.navbar{
+    height:60px;
+    width: 100px;
+    background-color: black;
+}
+
+.navbar_mobile{
+    display:none
+}
+
+@media (max-width: 900px) {
+    .navbar{
+        display:none;
+    }
+    .navbar_mobile{
+        display:grid;
+    }
+}
