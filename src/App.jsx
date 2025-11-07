@@ -1,15 +1,24 @@
-import { useState } from 'react'
 import './App.css'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import Header from './components/Header/Header.jsx'
 import ItemListContainer from './components/ItemListContainer/ItemListContainer'
+import Contacto from './components/Contact/Contact.jsx'
+import Home from './components/Home/Home.jsx'
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <>
-    <div>
-      <ItemListContainer/>
-    </div>
+      <div>
+        <BrowserRouter>
+          <Header/>
+          <Routes>
+            <Route path='/' element={<Home/>} />
+            <Route path='/seccion/Productos' element={<ItemListContainer children={'Listado de productos'}/> } />
+            <Route path='/seccion/Contacto' element={<Contacto/>} />
+          </Routes>
+          <ItemListContainer />
+        </BrowserRouter>
+      </div>
     </>
   )
 }
