@@ -1,8 +1,17 @@
 import Item from "../Item/Item";
+import clases from './ItemList.module.css';
 
-const ItemList = () => {
+const ItemList = ({ productos }) => {
     return (
-        <Item/>
+        <div className={clases.divItemList}>
+            {
+                productos.map(prod => {
+                    return (
+                        <Item key={prod.id} {...prod} />
+                    )
+                })
+            }
+        </div>
     );
 }
 

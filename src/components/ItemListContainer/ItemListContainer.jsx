@@ -15,10 +15,7 @@ const ItemListContainer = () => {
     console.log(productos);
     return (
         <>
-            <div>
-                <h1>Pagina Pato</h1>
-                <ItemList productos={productos} children={'Productos'} />
-            </div>
+            <div className={clases.divItemList}><ItemList productos={productos} children={'Productos'} /></div>
         </>
     )
 }
